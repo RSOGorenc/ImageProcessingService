@@ -1,0 +1,13 @@
+sudo: required
+
+language: java
+
+services:
+  - docker
+
+script:
+  - docker build -t processing-microservice
+after_success:
+  - docker tag processing-microservice "$DOCKER_HUB_USERNAME"/processing-microservice:latest
+  - docker login -u "$DOCKER_HUB_USERNAME" -p "$DOCKER_HUB_PASSWORD"
+  - docker push "$DOCKER_HUB_USERNAME"/processing-microservice:latest

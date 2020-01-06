@@ -31,7 +31,7 @@ public class ProcessingResource {
             mh = 0;
         }
         byte[] processed;
-        if (mw >= 0 && mh >= 0){
+        if (mw > 0 && mh > 0){
             processed = ImageTool.processImage(decoded, mw, mh);
         }
         else{
