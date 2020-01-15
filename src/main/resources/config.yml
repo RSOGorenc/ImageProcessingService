@@ -1,5 +1,5 @@
 kumuluzee:
-  name: customer-service
+  name: processing-service
   version: 1.0.0
   env:
     name: dev
@@ -9,8 +9,6 @@ kumuluzee:
     consul:
       agent: http://35.187.82.123
 
-rest-config:
-  string-property: Monday
-  boolean-property: true
-  integer-property: 23
-  encoded-property: ZW5jb2RlZCBwcm9wZXJ0eQ==
+size-config:
+  width: 700
+  height: 600

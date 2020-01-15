@@ -13,13 +13,7 @@ import java.awt.RenderingHints;
 // Will be moved to a separate micro-service
 
 public class ImageTool {
-    private static int defaultMaxWidth = 720;
-    private static int defaultMaxHeight = 720;
     private static float jpegCompression = 0.85f;
-
-    public static byte[] processImage(byte[] inputImage){
-        return processImage(inputImage, defaultMaxWidth, defaultMaxHeight);
-    }
 
     public static byte[] processImage(byte[] inputImage, int maxWidth,  int maxHeight) {
         try {

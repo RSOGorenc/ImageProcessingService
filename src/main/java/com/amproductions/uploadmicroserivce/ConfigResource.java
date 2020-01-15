@@ -26,18 +26,14 @@ public class ConfigResource {
     public Response test() {
         String response =
                 "{" +
-                        "\"stringProperty\": \"%s\"," +
-                        "\"booleanProperty\": %b," +
-                        "\"integerProperty\": %d," +
-                        "\"encodedProperty\": \"%s\"" +
+                        "\"width\": \"%d\"," +
+                        "\"height\": \"%d\"" +
                         "}";
 
         response = String.format(
                 response,
-                properties.getStringProperty(),
-                properties.getBooleanProperty(),
-                properties.getIntegerProperty(),
-                properties.getEncodedProperty());
+                properties.getWidth(),
+                properties.getHeight());
 
         return Response.ok(response).build();
     }

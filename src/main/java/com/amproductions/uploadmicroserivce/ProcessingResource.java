@@ -1,14 +1,20 @@
 package com.amproductions.uploadmicroserivce;
 
+import javax.enterprise.context.RequestScoped;
+import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.Base64;
 
+@RequestScoped
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
 @Path("processing")
 public class ProcessingResource {
+
+    @Inject
+    private ConfigProperties properties;
 
     @POST
     @Consumes(MediaType.TEXT_PLAIN)
@@ -35,7 +41,7 @@ public class ProcessingResource {
             processed = ImageTool.processImage(decoded, mw, mh);
         }
         else{
-            processed = ImageTool.processImage(decoded);
+            processed = ImageTool.processImage(decoded, properties.getWidth(), properties.getHeight());
         }
         if(processed == null){
             return Response.status(Response.Status.BAD_REQUEST).build();

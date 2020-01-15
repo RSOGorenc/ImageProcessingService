@@ -10,48 +10,27 @@ import javax.enterprise.context.ApplicationScoped;
  * @since 2.3.0
  */
 @ApplicationScoped
-@ConfigBundle("rest-config")
+@ConfigBundle("size-config")
 public class ConfigProperties {
 
     @ConfigValue(watch = true)
-    private String stringProperty;
-
-    private Boolean booleanProperty;
-
-    private Integer integerProperty;
-
+    private Integer width;
     @ConfigValue(watch = true)
-    private String encodedProperty;
+    private  Integer height;
 
-    public String getStringProperty() {
-        return stringProperty;
+    public Integer getHeight() {
+        return height;
     }
 
-    public void setStringProperty(String stringProperty) {
-        this.stringProperty = stringProperty;
+    public Integer getWidth() {
+        return width;
     }
 
-    public Boolean getBooleanProperty() {
-        return booleanProperty;
+    public void setHeight(Integer height) {
+        this.height = height;
     }
 
-    public void setBooleanProperty(Boolean booleanPropertysomeBoolean) {
-        this.booleanProperty = booleanPropertysomeBoolean;
-    }
-
-    public Integer getIntegerProperty() {
-        return integerProperty;
-    }
-
-    public void setIntegerProperty(Integer integerProperty) {
-        this.integerProperty = integerProperty;
-    }
-
-    public String getEncodedProperty() {
-        return encodedProperty;
-    }
-
-    public void setEncodedProperty(String encodedProperty) {
-        this.encodedProperty = encodedProperty;
+    public void setWidth(Integer width) {
+        this.width = width;
     }
 }
