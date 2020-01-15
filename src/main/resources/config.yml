@@ -7,7 +7,7 @@ kumuluzee:
     start-retry-delay-ms: 500
     max-retry-delay-ms: 900000
     consul:
-      agent: http://35.187.82.123
+      agent: http://consul-1-consul-ui:80
 
 size-config:
   width: 700
